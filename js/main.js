@@ -1,5 +1,4 @@
 /*Thanks to https://www.npmjs.com/package/special-html */
-
 function convertString(oldstring) {
   var newstring = '',
     i = 0,
@@ -27,7 +26,6 @@ function startConvString() {
     for (var i = 0; i < lines.length; i++) {
       temp = temp == undefined ? convertString(lines[i]) + '\n------\n' : temp + convertString(lines[i]) + '\n------\n';
       $('#conv').val(temp);
-      $('#prev_btn').removeClass('hidden');
     }
   } else {
     $('html, body').animate({

@@ -19,8 +19,8 @@ function convertString (oldstring) {
   return newstring
 };
 
-
-function startConv(){
+//convertion for string
+function startConvString(){
   var lines = $('#orig').val().split('\n');
   if(lines != ''){
     var temp;
@@ -37,4 +37,55 @@ function startConv(){
       $('#nono').addClass('hidden');
     }, 5000)
   }
+}
+
+//convertion for email template
+function startConvEmail(){
+  var lines = $('#orig').val().split('\n');
+  if(lines != ''){
+    var temp;
+    for(var i = 0;i < lines.length;i++){
+      temp = temp == undefined ? convertString(lines[i]) : temp + convertString(lines[i]) ;
+      $('#conv').val(temp);
+    }
+  }else{
+    $('html, body').animate({scrollTop : 0},800);
+    alert('Oops! Help us fill up the info for convertion!');
+    $('#conv').val("");
+    $('#nono').removeClass('hidden');
+    setTimeout(function(){
+      $('#nono').addClass('hidden');
+    }, 5000)
+  }
+}
+
+
+//main convertion click start
+function startConv(){
+  var opt = $('#string').is(":checked");
+
+  if(opt == true){
+    startConvString();
+  }else{
+    startConvEmail();
+  }
+
+}
+
+
+//watch the radio btns
+function optChk(){
+  var opt = $('#string').is(":checked");
+
+  if(opt == true){
+    $('#orig').attr('placeholder', 'Strings to be converted line by line');
+    $('#conv').attr('placeholder', 'Converted String(s)');
+  }else{
+    $('#orig').attr('placeholder', 'Email template to be converted');
+    $('#conv').attr('placeholder', 'Converted Email');
+  }
+
+  $('#orig').val("");
+  $('#conv').val("");
+
 }

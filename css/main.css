@@ -177,6 +177,16 @@ textarea {
      text-transform: uppercase;
    }
 
+   #options{
+     font-size: 14px;
+     font-family: tahoma;
+     margin-left: 10px;
+   }
+
+   #options span{
+    font-weight: bold;
+   }
+
 
 /* ==========================================================================
    Media Queries

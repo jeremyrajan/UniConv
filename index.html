@@ -33,10 +33,17 @@
           <div id="message">
             Enter the string to be converted line by line, type or paste the string followed by "ENTER" key to add a new string to be converted.
           </div>
+          <div id="options">
+            <form>
+              <span>Options: </span>
+              <input onClick="optChk();" type="radio" name="opt" id="string" value="string" checked> String/Sentence &nbsp;
+              <input onClick="optChk();" type="radio" name="opt" id="email" value="Email"> Email HTML
+            </form>
+          </div>
           <div id="convert">
             <textarea id="orig" class="left" placeholder="Strings to be converted line by line"></textarea>
             <div class="v-sep left"></div>
-            <textarea id="conv" class="left" placeholder="Processed String"></textarea>
+            <textarea id="conv" class="left" placeholder="Converted String(s)" readonly></textarea>
           </div>
           <div class="clearfix"></div><br/>
           <a href="javascript:void(0);" class="button" id="conv_btn" onClick="startConv();">CONVERT</a>

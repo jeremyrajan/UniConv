@@ -17,6 +17,7 @@
         <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/vendor/htmlminifier.min.js"></script>
 
 
     </head>
@@ -39,7 +40,8 @@
             <form>
               <span>Options: </span>
               <input onClick="optChk();" type="radio" name="opt" id="string" value="string" checked> String/Sentence &nbsp;
-              <input onClick="optChk();" type="radio" name="opt" id="email" value="Email"> Email HTML
+              <input onClick="optChk();" type="radio" name="opt" id="email" value="Email"> Email HTML &nbsp; | &nbsp;
+              <input type="checkbox" id="minify"> Minify HTML (Only works for HTML Templates)
             </form>
           </div>
           <div id="convert">

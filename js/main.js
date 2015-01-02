@@ -50,6 +50,7 @@ function startConvEmail() {
       $('#conv').val(temp);
       $('#prev_btn').removeClass('hidden');
     }
+    if($('#minify').is(":checked") == true){minifyHTML();}
   } else {
     $('html, body').animate({
       scrollTop: 0
@@ -106,4 +107,15 @@ function livePrev() {
   }, 2000);
   var html = $('#conv').val();
   $('#iframe_preview').attr('src', 'data:text/html;charset=utf-8,' + encodeURI(html));
+}
+
+
+//minify html
+function minifyHTML(){
+  var html = $('#conv').val();
+  var htmlMin = minify(html, {
+    removeAttributeQuotes: true
+  });
+
+  $('#conv').val(htmlMin);
 }
